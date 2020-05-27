@@ -1,0 +1,75 @@
+{
+  "language": "es",
+
+  "emailLabel": "Email",
+  "passwordLabel": "Contraseña",
+  "loginLabel": "Iniciar sesión",
+  "forgotPasswordLink": "¿Olvidaste la contraseña?",
+  "DontHaveLabel": "¿No tienes una cuenta?",
+  "signUpLink": "Registrarse",
+
+  "firstNameLabel": "Nombre",
+  "lastNameLabel": "Apellido",
+  "phoneLabel": "Número de celular",
+  "rePasswordLabel": "Vuelva a ingresar la contraseña",
+
+  "resendNotificationButtonText": "Reenviar",
+  "signUpThanksHeader": "¡Gracias por registrarse",
+  "signUpThanksText1": "Una confirmación de su correo electrónico está en",
+  "signUpThanksText2": "su camino hacia",
+  "signUpThanksText3": "Después de su confirmación, puede iniciar sesión",
+  "signUpThanksText4": "a la aplicación",
+  "text1": "Si no ves nuestro correo electrónico, revisa tu",
+  "text2": "carpeta de spam. Si no recibiste nuestro",
+  "text3": "email, haga clic en re enviar y enviaremos",
+  "text4": "otro.",
+
+  "confirmText1": "Ahora puedes acceder",
+  "confirmText2": "a la página!",
+  "confirmHeader1": "¡Tu cuenta ha sido confirmada!",
+  "confirmHeader2": "Expiró el código de confirmación",
+  "confirmHeader3": "Tu cuenta ha sido confitmada",
+
+  "forgotPasswordLabel": "Olvidé la contraseña",
+  "ImageLabel":"Ingrese una foto",
+  "EmailLabel": "Ingresa tu email",
+  "ResetPasswordButton": "Restablecer contraseña",
+  "checkYourMail": "Revisa tu correo",
+  "resetLinkWasSent": "Se envió el enlace de reinicio",
+
+  "resetPasswordLabel": "Restablecer la contraseña",
+  "saveChangesButton": "Guardar cambios",
+  "newPassword": "Nueva contraseña",
+  "reEnterNewPassword": "Vuelva a introducir la nueva contraseña",
+  "currentPassword": "Contraseña actual",
+
+  "expiredMsg": "Esta solicitud de restablecimiento de contraseña expiró, por favor inicie una nueva solicitud de contraseña olvidada.",
+
+  "passwordChanged1": "Su contraseña ha sido cambiada",
+  "passwordChanged2": "Su contraseña ha sido cambiada para la cuenta",
+  "passwordChanged3": "Ahora puedes iniciar sesión con tu nueva contraseña.",
+
+  "changeDetails": "Cambiar datos personales",
+  "changePassword": "Cambiar contraseña",
+
+  "GoToLogin": "Ir al inicio de sesión",
+  "backButton": "Atrás",
+
+  "messages": {
+    "sent": "Enviamos la notificación de nuevo",
+    "confirmed": "Cuenta ya confirmada",
+    "tryLater": "Inténtalo más tarde."
+  },
+  "errors": {
+    "uniqueness": "El correo electrónico ya existe",
+    "forbidden": "Por favor, confirme su cuenta primero",
+    "invalid_grant": "nombre de usuario o contraseña incorrectos",
+    "passwords_mismatch": "las contraseñas no son las mismas",
+    "empty_password": "la contraseña no puede estar vacía",
+    "invalidValue":"La contraseña debe tener al menos 8 caracteres",
+    "general_error": "Algo salió mal, inténtalo de nuevo",
+    "userNotFound": "No reconocemos este correo electrónico",
+    "incorrect_password": "Contraseña actual incorrecta"
+  }
+
+}

@@ -1,0 +1,246 @@
+<!doctype html>
+<html>
+<head>
+    <title>Registro confirmado</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> <!-- load bootstrap css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- load fontawesome -->
+    <link rel="manifest" href="/manifest.json">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.js"></script>
+    <style>
+        body {
+            background-color: #3387cc;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            padding-top:0px;
+			font-family:"Work Sans", Arial, sans-serif;
+        }
+        .whiteText {
+            color: #24ADB3;
+        }
+		div#general{
+			margin:auto;
+			margin-top:0px;
+			width:960px;
+			height: 800px;
+			background-color:white;
+		}
+
+        @media (min-width: 768px) {
+            .row-sm-offset-3 div:first-child[class*="col-"] {
+                margin-left: 25%;
+            }
+        }
+
+        .confirmMsg {
+            font-weight: 300;
+            margin-top: 0;
+            font-family:"Work Sans", Arial, sans-serif;
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 22px;
+            text-align: center;
+        }
+        .boldEmail{
+            font-weight: bold;
+        }
+        .resendEmail {
+            font-weight: 300;
+            margin-top: 0;
+            font-family: "Work Sans", Arial, sans-serif;
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 22px;
+            text-align: center;
+        }
+
+        .centerText {
+            text-align: center;
+            line-height: 300%;
+        }
+
+        .emailConfirmText {
+            font-family: "Work Sans", Arial, sans-serif;
+            font-weight: 300;
+            font-size: 24px;
+        }
+
+        .cdWidth {
+            width: 315px;
+        }
+        
+        .spin {
+            display: inline-block;
+            width: 100%;
+            text-align:center;
+        }
+
+        .resendDetails {
+            font-weight: 300;
+            margin-top: 0;
+            font-family: "Work Sans", Arial, sans-serif;
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 22px;
+            text-align: center;
+        }
+		.button1 {
+			background:#66cc66;
+			color: #fff;
+			display:inline-block;
+			font-size:1.25em;
+			margin-left:auto;
+			padding:10px 0px;
+			text-align:center;
+			width:200px;
+			text-decoration:none;
+			box-shadow:0px 3px 0px #057043;
+			border-radius:50px;
+		}
+		.btn {
+		  cursor: pointer;
+		  -webkit-border-radius: 40px;
+		  -moz-border-radius: 40px;
+		  -ms-border-radius: 40px;
+		  border-radius: 40px;
+		  -webkit-box-shadow: none !important;
+		  box-shadow: none !important; }
+		  .btn:hover, .btn:active, .btn:focus {
+			outline: none; }
+		  .btn.btn-primary {
+			background: #2ffc7e;
+			border: 1px solid #2f89fc;
+			color: #fff; }
+			.btn.btn-primary:hover {
+			  border: 1px solid #2ffc5b;
+			  background: transparent;
+			  color: #2f89fc; }
+			.btn.btn-primary.btn-outline-primary {
+			  border: 1px solid #2ffc5b;
+			  background: transparent;
+			  color: #2ffc39; }
+			  .btn.btn-primary.btn-outline-primary:hover {
+				border: 1px solid transparent;
+				background: #2ffc62;
+				color: #fff; }
+		  .btn.btn-white {
+			background: #fff;
+			border: 1px solid #fff;
+			color: #2ffc51; }
+			.btn.btn-white:hover, .btn.btn-white:focus, .btn.btn-white:active {
+			  border: 1px solid #fff;
+			  color: #24adb3; }
+			.btn.btn-white.btn-outline-white {
+			  border-color: rgba(255, 255, 255, 0.8);
+			  background: none;
+			  -webkit-border-radius: 30px;
+			  -moz-border-radius: 30px;
+			  -ms-border-radius: 30px;
+			  border-radius: 30px;
+			  border-width: 1px;
+			  color: #fff; }
+			  .btn.btn-white.btn-outline-white:hover, .btn.btn-white.btn-outline-white:focus, .btn.btn-white.btn-outline-white:active {
+				background: #fff;
+				border-color: #fff;
+				color: #2f89fc; }
+		  .btn.btn-secondary {
+			background: #66cc66;
+			border: 1px solid #66cc66;
+			color: #fff; }
+			.btn.btn-secondary:hover, .btn.btn-secondary:focus, .btn.btn-secondary:active {
+			  border: 1px solid #66cc66b6;
+			  color: #fff; }
+
+    </style>
+</head>
+<body>
+<div id="containerDiv" class="container" style="display: none">
+	<div id="general">
+		<div class="row row-sm-offset-3">
+			<div class="col-xs-12 col-sm-6">
+				<div id="imgDiv">
+					<img class="center-block" id="logo" alt="logo"
+						 style="height: 200px; width: 200px; object-fit: contain;margin-top: 40px" src="/images/LOGO.png">
+				</div>
+				<h2 id="pageHeader" class="centerText emailConfirmText whiteText"></h2>
+				<div  id="accessOk">
+					<p class="confirmMsg whiteText"><%= confirmText1 %></p>
+					</br>
+					</br>
+					<center><button id="login" class="button1" onclick="location.href = '/ibm/cloud/appid/rop/login?language=<%= language %>'"><%= loginLabel %></button></center>
+				</div>
+				<div id="resendOption" style="display:none">
+				</br>
+				</br>
+				<div class="spin">
+					<center><button onclick="sendAgain();" id="resendEmailLink" class="btn btn-secondary"><%= resendNotificationButtonText %></button></center>
+					<i id="spinner" class="fa fa-circle-o-notch fa-spin fa-2x" style="display:none"></i>
+				</div>
+				<div id="resendEmailStatus" style="display:none;"
+					 class="alert alert-info center-block cdWidth text-center alert-dismissable">
+					<buttton onclick="hide();" class="close" data-dismiss="alert" aria-label="close">&times;</buttton>
+					<p id="msg"></p>
+				</div>
+				</br>
+				</br>
+					<p class="resendDetails whiteText"><%= text1 %><br/>
+						<%= text2 %><br/>
+						<%= text3 %><br/>
+						<%= text4 %></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+
+	window.addEventListener("load", e => {
+		if (navigator.getInstalledRelatedApps) {
+			navigator.getInstalledRelatedApps().then(apps => {
+				if (apps.length > 0) {
+					//show on android application
+					window.location.href = "<%= mobileRedirectUri %>";
+				} else {
+                  //show on web
+                  document.getElementById("containerDiv").setAttribute('style', 'display:visible');
+                }
+			});
+		} else {
+          //show on web
+          document.getElementById("containerDiv").setAttribute('style', 'display:visible');
+        }
+	});
+    if (!"<%= errorStatusCode %>") {
+	    document.getElementById("pageHeader").innerHTML = "<%= confirmHeader1 %>";
+    } else if ("<%= errorStatusCode %>" === "NOT_FOUND") {
+	    document.getElementById("pageHeader").innerHTML = "<%= confirmHeader2 %>";
+	    document.getElementById("resendOption").setAttribute("style", "display:visible");
+	    document.getElementById("accessOk").setAttribute("style", "display:none");
+    } else if ("<%= errorStatusCode %>" === "GONE") {
+	    document.getElementById("pageHeader").innerHTML = "<%= confirmHeader3 %>";
+    } else {
+      document.getElementById("pageHeader").innerHTML = "<%= errorDescription %>";
+    }
+
+	function sendAgain() {
+		document.getElementById("resendEmailLink").setAttribute("style", "display:none");
+		document.getElementById("spinner").setAttribute("style", "display:visible; color: #4178be;");
+		$.post("/resend/USER_VERIFICATION?language=" + "<%= language %>",
+			{
+              uuid: "<%= uuid %>"
+			},
+			function(data, status){
+				document.getElementById("msg").innerHTML = data;
+				document.getElementById("spinner").setAttribute("style", "display:none");
+				$("#resendEmailStatus").fadeIn();
+			});
+	}
+	function hide() {
+		document.getElementById("resendEmailStatus").setAttribute("style", "display:none");
+		document.getElementById("resendEmailLink").setAttribute("style", "display:visible");
+	}
+</script>
+</body>
+</html>

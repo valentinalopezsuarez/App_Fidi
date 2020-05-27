@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+<head>
+    <title>Iniciar sesion</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> <!-- load bootstrap css -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.js"></script>
+    <style>
+        body {
+            background-color: #3387cc;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+			font-family:"Work Sans", Arial, sans-serif;
+            padding-top:0px;
+        }
+		div#general{
+			margin:auto;
+			margin-top:0px;
+			width:960px;
+			height: 800px;
+			background-color:white;
+		}
+		div#arriba{
+			width:90px;
+			height:40px;
+			background-color:white;
+		}
+		div#bloqueRegistro{
+			margin:auto;
+			margin-top:0px;
+			width:90px;
+			height: 30px;
+			background-color:white;
+		}
+		.button1 {
+			background:#66cc66;
+			color: #fff;
+			display:inline-block;
+			font-size:1.25em;
+			margin-left:auto;
+			padding-top: 0.5rem !important;
+			padding-right: 1.5rem !important;
+			text-align:center;
+			width:200px;
+			text-decoration:none;
+			line-height: 1.5;
+			border-radius:50px;
+			box-shadow: 0 0 0 0.2rem rgba(0, 255, 115, 0.25); 
+			border-color: #66cc66;
+		}
+        .whiteText {
+            color: #24ADB3;
+        }
+        .Bold {
+            font-weight: bold
+        }
+		.btn {
+		  cursor: pointer;
+		  -webkit-border-radius: 40px;
+		  -moz-border-radius: 40px;
+		  -ms-border-radius: 40px;
+		  border-radius: 40px;
+		  -webkit-box-shadow: none !important;
+		  box-shadow: none !important; }
+		  .btn:hover, .btn:active, .btn:focus {
+			outline: none; }
+		  .btn.btn-primary {
+			background: #2ffc7e;
+			border: 1px solid #2f89fc;
+			color: #fff; }
+			.btn.btn-primary:hover {
+			  border: 1px solid #2ffc5b;
+			  background: transparent;
+			  color: #2f89fc; }
+			.btn.btn-primary.btn-outline-primary {
+			  border: 1px solid #2ffc5b;
+			  background: transparent;
+			  color: #2ffc39; }
+			  .btn.btn-primary.btn-outline-primary:hover {
+				border: 1px solid transparent;
+				background: #2ffc62;
+				color: #fff; }
+		  .btn.btn-white {
+			background: #fff;
+			border: 1px solid #fff;
+			color: #2ffc51; }
+			.btn.btn-white:hover, .btn.btn-white:focus, .btn.btn-white:active {
+			  border: 1px solid #fff;
+			  color: #24adb3; }
+			.btn.btn-white.btn-outline-white {
+			  border-color: rgba(255, 255, 255, 0.8);
+			  background: none;
+			  -webkit-border-radius: 30px;
+			  -moz-border-radius: 30px;
+			  -ms-border-radius: 30px;
+			  border-radius: 30px;
+			  border-width: 1px;
+			  color: #fff; }
+			  .btn.btn-white.btn-outline-white:hover, .btn.btn-white.btn-outline-white:focus, .btn.btn-white.btn-outline-white:active {
+				background: #fff;
+				border-color: #fff;
+				color: #2f89fc; }
+		  .btn.btn-secondary {
+			background: #66cc66;
+			border: 1px solid #66cc66;
+			color: #fff; }
+			.btn.btn-secondary:hover, .btn.btn-secondary:focus, .btn.btn-secondary:active {
+			  border: 1px solid #66cc66b6;
+			  color: #fff; }
+    </style>
+</head>
+<body>
+<div class="container">
+	<div id="general">
+		<div class="col-sm-6 col-sm-offset-3">
+			<div id="arriba">
+			</div>
+			<div id="imgDiv">
+				<a href="/public/index.html"><img class="center-block" id="logo" alt="logo"
+					 style="height: 200px; width: 200px; object-fit: contain;margin-top: 40px" src="/images/LOGO.png"/></a>
+			</div>
+			<!-- show any messages that come back with authentication -->
+			<% if (message.length > 0) { %>
+				<div class="alert alert-danger"><%= message %></div>
+			<% } %>
+			<!-- LOGIN FORM -->
+			<form action="/rop/login/submit?language=<%= language %>" data-toggle="validator" method="post" id="loginForm">
+				<div class="form-group">
+					<label for="email" class="whiteText"><%= emailLabel %></label>
+					<input id="email" type="text" class="form-control" name="username" value="<%= email %>" required>
+				</div>
+				<div class="form-group">
+					<a class="pull-right whiteText Bold" href="javascript: moveTo('/ibm/cloud/appid/view/forgot_password');" id="forgot_password_button"><%= forgotPasswordLink %></a>
+					<label for="password" class="whiteText"><%= passwordLabel %></label>
+					<input id="password" type="password" class="form-control" name="password" required>
+				</div>
+                <center block>
+				<button type="submit" class="btn btn-secondary"><%= loginLabel %></button>
+				</center block>
+				<div id="bloqueRegistro">
+				</div>
+				<center>
+					<div class="pull-center whiteText"> <%= DontHaveLabel %>
+						<a class="pull-center whiteText Bold" href="javascript: moveTo('/ibm/cloud/appid/view/sign_up');" id="sign_up_button"><%= signUpLink %></a>
+					</div>
+				</center>
+			</form>
+			<select style="display: none" onchange="moveTo('/ibm/cloud/appid/rop/login');" name="language" form="loginForm" id="languageCode">
+			<option value="en">English</option>
+			<option value="fr">franÃ§ais</option>|
+			<option value="es">Español(Por defecto)</option>|
+			</select>
+		</div>
+	</div>
+</div>
+</body>
+<script>
+	document.getElementById('languageCode').value = "<%= language %>";
+    function moveTo(path) {
+        location.href = path + '?language='+ document.getElementById('languageCode')[document.getElementById('languageCode').selectedIndex].value + '&email=' + document.getElementById('email').value;
+    }
+</script>
+</html>

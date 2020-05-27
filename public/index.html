@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    
+    <title>FIDI</title>
+  <!-- Latest compiled and minified CSS -->
+  
+  
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta charset="UTF-8">
+	<link rel="manifest" href="/manifest.json">
+	 <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="/css/animate.css">
+    
+    <link rel="stylesheet" href="/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/css/magnific-popup.css">
+
+    <link rel="stylesheet" href="/css/aos.css">
+
+    <link rel="stylesheet" href="/css/ionicons.min.css">
+
+    <link rel="stylesheet" href="/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="/css/jquery.timepicker.css">
+
+    
+    <link rel="stylesheet" href="/css/flaticon.css">
+    <link rel="stylesheet" href="/css/icomoon.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script>
+		$(document).ready(function () {
+			$(".hideOnStartup").hide();
+			$(".spinn").show();
+			$.getJSON("/protected", function (userDetails) {
+				// Already authenticated
+				$("#WhenAuthenticated").show();
+				$("#logoutButton").show();
+				$("#name").text(userDetails.firstName + " " + userDetails.lastName);
+				$("#email").text(userDetails.email);
+                $("#phoneNumber").text(userDetails.phoneNumber);
+			}).fail(function () {
+				// Not authenticated yet
+				$("#WhenNotAuthenticated").show();
+				$("#loginButton").show();
+			}).always(function() {
+				var languageQuery = window.location.href.slice(window.location.href.indexOf('?'));
+				var changeDetails = document.getElementById('changeDetails');
+				changeDetails.href = "/ibm/cloud/appid/cloudLand/view/change/details" + languageQuery;
+				var changePassword = document.getElementById('changePassword');
+				changePassword.href = "/ibm/cloud/appid/cloudLand/view/change/password" + languageQuery;
+                $("#spinn").hide();
+			});
+		});
+  </script>
+</head>
+<body>
+<div id="WhenNotAuthenticated" class="hideOnStartup">
+	<nav class="navbar py-4 navbar-expand-lg ftco_navbar navbar-light bg-light flex-row">
+		<div class="container">
+			<div class="row d-flex">
+				<div class="col-md-10 pr-10 d-flex topper align-items-center">
+					<div class="block-21 mb-30 d-flex">
+						<a class="blog-img mr-8" style="background-image: url(images/logoazul.jpeg);"></a>
+					</div>
+					<div class="col-lg-2 pr-6 align-items-center">
+						<a class="navbar-brand" href="index.html">Fidi</a>
+					</div>
+					<div class="col-lg-12 d-none d-md-block">
+						<div class="row d-flex">
+							<div class="col-md-4 pr-8 d-flex topper align-items-center">
+								<div class="icon bg-white mr-2 d-flex justify-content-center align-items-center">
+									<span class="icon-map"></span></div>
+								<span class="text">Colombia</span>
+							</div>
+							<div class="col-md-4 pr-8 d-flex topper align-items-center">
+								<div class="icon bg-white mr-2 d-flex justify-content-center align-items-center">
+									<span class="icon-paper-plane"></span></div>
+								<span class="text">Email: fidi@gmail.com</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light" id="ftco-navbar">
+		<div class="container d-flex align-items-center">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+				aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="oi oi-menu"></span> Menu
+			</button>
+			<p class="button-custom order-lg-last mb-0"><a 
+					class="btn btn-secondary py-2 px-4" href="/ibm/cloud/appid/rop/login" id="loginButton">Ingresar</a></p>
+			<div class="collapse navbar-collapse" id="ftco-nav">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active"><a href="index.html" class="nav-link pl-0">Inicio</a></li>
+					<li class="nav-item"><a href="about.html" class="nav-link">Nosotros</a></li>
+					<li class="nav-item"><a href="department.html" class="nav-link">Servicios </a></li>
+					<li class="nav-item"><a href="blog.html" class="nav-link">Noticias</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- END nav -->
+
+	<section class="home-slider owl-carousel">
+		<div class="slider-item" style="background-image:url(images/bg_1.jpg);" data-stellar-background-ratio="0.5">
+			<div class="overlay"></div>
+			<div class="container">
+				<div class="row no-gutters slider-text align-items-center justify-content-start"
+					data-scrollax-parent="true">
+					<div class="col-md-6 text ftco-animate">
+						<h1 class="mb-4">Nunca ha sido tan fácil acceder <span> al servicio de salud </span></h1>
+						<h3 class="subheading">Incluimos una base de datos con los hospitales según tu Eps </h3>
+						<p><a href="about.html" class="btn btn-secondary px-4 py-3 mt-3">Conocenos</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="slider-item" style="background-image:url(images/persona.jpg);">
+			<div class="overlay"></div>
+			<div class="container">
+				<a href="https://www.freepik.es/fotos/medico">Foto de Médico creado por freepik - www.freepik.es</a>
+				<div class="row no-gutters slider-text align-items-center justify-content-start"
+					data-scrollax-parent="true">
+					<div class="col-md-6 text ftco-animate">
+						<h1 class="mb-4">Nos preocupamos <span>por tu bienestar</span></h1>
+						<h3 class="subheading">Buscamos agilizar y mejorar el servicio de atención en los hospitales.
+						</h3>
+						<p><a href="about.html" class="btn btn-secondary px-4 py-3 mt-3">Conocenos</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="ftco-services ftco-no-pb">
+		<div class="container">
+			<div class="row no-gutters">
+				<div class="col-md-3 d-flex services align-self-stretch p-4 ftco-animate">
+					<div class="media block-6 d-block text-center">
+						<div class="icon d-flex justify-content-center align-items-center">
+							<span class="flaticon-doctor"></span>
+						</div>
+						<div class="media-body p-2 mt-3">
+							<h3 class="heading">Asistencia completa</h3>
+							<p>Através de nuestros aliados buscamos ofrecer un servicio más eficiente a nuestros
+								usuarios.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 d-flex services align-self-stretch p-4 ftco-animate">
+					<div class="media block-6 d-block text-center">
+						<div class="icon d-flex justify-content-center align-items-center">
+							<span class="flaticon-stethoscope"></span>
+						</div>
+						<div class="media-body p-2 mt-3">
+							<h3 class="heading">Urgencias</h3>
+							<p>Teniendo encuenta tu ubicación y tu EPS te asignaremos el hospital cuyo tiempo de
+								atención y
+								transporte sea menor.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 d-flex services align-self-stretch p-4 ftco-animate">
+					<div class="media block-6 d-block text-center">
+						<div class="icon d-flex justify-content-center align-items-center">
+							<span class="flaticon-ambulance"></span>
+						</div>
+						<div class="media-body p-2 mt-3">
+							<h3 class="heading">Transporte</h3>
+							<p>Incluimos un servicio de transporte para que no tengas que preocuparte en el como llegar.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 d-flex services align-self-stretch p-4 ftco-animate">
+					<div class="media block-6 d-block text-center">
+						<div class="icon d-flex justify-content-center align-items-center">
+							<span class="flaticon-24-hours"></span>
+						</div>
+						<div class="media-body p-2 mt-3">
+							<h3 class="heading">Hospitales</h3>
+							<p>Queremos mejorar un aspecto que nos preocupa a todos, el servcio de atención al cliente.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer class="ftco-footer ftco-bg-dark ftco-section">
+		<div class="container">
+			<div class="row mb-5">
+				<div class="col-md">
+					<div class="ftco-footer-widget mb-5">
+						<h2 class="ftco-heading-2 logo">Fidi</span></h2>
+						<p>" Bienestar en un click "</p>
+					</div>
+					<div class="ftco-footer-widget mb-5">
+						<h2 class="ftco-heading-2">¿Tienes alguna pregunta? Escribenos</h2>
+						<div class="block-23 mb-3">
+							<ul>
+								<li><a href="#"><span class="icon icon-envelope"></span><span
+											class="text">fidi@gmail.com</span></a></li>
+							</ul>
+						</div>						
+					</div>
+				</div>
+				<div class="col-md">
+					<div class="ftco-footer-widget mb-5 ml-md-4">
+						<h2 class="ftco-heading-2">Links</h2>
+						<ul class="list-unstyled">
+							<li><a href="index.html"><span class="ion-ios-arrow-round-forward mr-2"></span>Inicio</a></li>
+							<li><a href="about.html"><span class="ion-ios-arrow-round-forward mr-2"></span>Nosotros</a></li>
+							<li><a href="department.html"><span class="ion-ios-arrow-round-forward mr-2"></span>Servicios</a></li>
+							<li><a href="blog.html"><span class="ion-ios-arrow-round-forward mr-2"></span>Noticias</a></li>
+						</ul>
+					</div>					
+				</div>
+				<div class="col-md">
+					<div class="ftco-footer-widget mb-5">
+						<h2 class="ftco-heading-2">Noticias recientes</h2>
+						<div class="block-21 mb-4 d-flex">
+							<a class="blog-img mr-4" style="background-image: url(images/image_1.jpg);"></a>
+							<div class="text">
+								<h3 class="heading"><a href="#">Primera</a>
+								</h3>
+								<div class="meta">
+									<div><a href="#"><span class="icon-calendar"></span> Dec 25, 2018</a></div>
+									<div><a href="#"><span class="icon-person"></span> Admin</a></div>
+									<div><a href="#"><span class="icon-chat"></span> 19</a></div>
+								</div>
+							</div>
+						</div>
+						<div class="block-21 mb-5 d-flex">
+							<a class="blog-img mr-4" style="background-image: url(images/image_2.jpg);"></a>
+							<div class="text">
+								<h3 class="heading"><a href="#">Segunda</a>
+								</h3>
+								<div class="meta">
+									<div><a href="#"><span class="icon-calendar"></span> Dec 25, 2018</a></div>
+									<div><a href="#"><span class="icon-person"></span> Admin</a></div>
+									<div><a href="#"><span class="icon-chat"></span> 19</a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md">
+					<div class="ftco-footer-widget mb-5">
+						<h2 class="ftco-heading-2">Estamos siempre contigo</h2>
+					</div>					
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 text-center">
+					</p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						Copyright &copy;
+						<script>document.write(new Date().getFullYear());</script> All rights reserved | This template
+						is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com"
+							target="_blank">Colorlib</a>
+						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					</p>
+				</div>
+			</div>
+		</div>
+
+	</footer>
+
+
+    
+</div>
+
+<div id="WhenAuthenticated" class="hideOnStartup">
+	<nav class="navbar py-4 navbar-expand-lg ftco_navbar navbar-light bg-light flex-row">
+		<div class="container">
+			<div class="row d-flex">
+				<div class="col-md-10 pr-10 d-flex topper align-items-center">
+					<div class="block-21 mb-30 d-flex">
+						<a class="blog-img mr-8" style="background-image: url(images/logoazul.jpeg);"></a>
+					</div>
+					<div class="col-lg-2 pr-6 align-items-center">
+						<a class="navbar-brand" href="index.html">Fidi</a>
+					</div>
+					<div class="col-lg-12 d-none d-md-block">
+						<div class="row d-flex">
+							<div class="col-md-4 pr-8 d-flex topper align-items-center">
+								<div class="icon bg-white mr-2 d-flex justify-content-center align-items-center">
+									<span class="icon-map"></span></div>
+								<span class="text">Colombia</span>
+							</div>
+							<div class="col-md-4 pr-8 d-flex topper align-items-center">
+								<div class="icon bg-white mr-2 d-flex justify-content-center align-items-center">
+									<span class="icon-paper-plane"></span></div>
+								<span class="text">Email: fidi@gmail.com</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light" id="ftco-navbar">
+		<div class="container d-flex align-items-center">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+				aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="oi oi-menu"></span> Menu
+			</button>
+			<p class="button-custom order-lg-last mb-0"><a 
+					class="btn btn-secondary py-2 px-4" href="/ibm/cloud/appid/logout" id="logoutButton">Cerrar sesión</a></p>
+			<div class="collapse navbar-collapse" id="ftco-nav">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item"><a href="inicio.html" class="nav-link pl-0">Inicio</a></li>
+					<li class="nav-item"><a href="about1.html" class="nav-link">Nosotros</a></li>
+					<li class="nav-item"><a href="blog1.html" class="nav-link">Noticias</a></li>
+					<li class="nav-item active"><a href="index.html" class="nav-link">Perfil</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+		<!-- END nav -->
+	<section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_1.jpg');"
+		data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row no-gutters slider-text align-items-center justify-content-center">
+				<div class="col-md-9 ftco-animate text-center">
+					<h1 class="mb-2 bread">¡Hola <span id="name"></span>!</h1>
+					<p class="breadcrumbs"><span class="mr-2"><a href="inicio.html">Inicio <i
+									class="ion-ios-arrow-forward"></i></a></span> <span>Perfil <i
+								class="ion-ios-arrow-forward"></i></span></p>
+					<p class="button-custom order-lg-last mb-0"><a class="btn btn-secondary py-2 px-4" id="changeDetails">Cambiar datos personales</a></p><br>
+					<p class="button-custom order-lg-last mb-0"><a class="btn btn-secondary py-2 px-4" id="changePassword">Cambiar contraseña</a></p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center mb-5 pb-2">
+				<div class="col-md-8 text-center heading-section ftco-animate">
+					<h2 class="mb-4">Servicios</h2>
+					<p>Escoge el servicio que necesitas</p>
+				</div>
+			</div>
+			<div class="ftco-departments">
+				<div class="row">
+					<div class="col-md-12 nav-link-wrap">
+						<div class="nav nav-pills d-flex text-center" id="v-pills-tab" role="tablist"
+							aria-orientation="vertical">
+							<a class="nav-link ftco-animate active" id="v-pills-1-tab" data-toggle="pill"
+								href="#v-pills-1" role="tab" aria-controls="v-pills-1"
+								aria-selected="true">Citas</a>
+
+							<a class="nav-link ftco-animate" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2"
+								role="tab" aria-controls="v-pills-2" aria-selected="false">Urgencias</a>
+							
+						</div>
+						
+					</div>
+					<div class="col-md-12 tab-wrap">
+
+						<div class="tab-content bg-light p-4 p-md-5 ftco-animate" id="v-pills-tabContent">
+
+							<div class="tab-pane py-2 fade show active" id="v-pills-1" role="tabpanel"
+								aria-labelledby="day-1-tab">
+								<div class="row departments">
+									<div class="col-lg-4 order-lg-last d-flex align-items-stretch">
+										<div class="img d-flex align-self-stretch"
+											style="background-image: url(images/dept-1.jpg);"></div>
+									</div>
+									<div class="col-lg-8">
+										<h2>Citas</h2>
+										<p>Acá podras pedir las citas que necesitas según tú eps.</p>
+										<center>
+										<p class="button-custom order-lg-last mb-0"><a 
+											class="btn btn-secondary py-2 px-4" href="index.html" >Pedir cita</a></p>
+										</center>
+									</div>
+								</div>
+							</div>
+
+							<div class="tab-pane fade" id="v-pills-2" role="tabpanel"
+								aria-labelledby="v-pills-day-2-tab">
+								<div class="row departments">
+									<div class="col-lg-4 order-lg-last d-flex align-items-stretch">
+										<div class="img d-flex align-self-stretch"
+											style="background-image: url(images/dept-2.jpg);"></div>
+									</div>
+									<div class="col-md-8">
+										<h2>Urgencias</h2>
+										<p>Te ofrecemos una covertura del servicio de urgencias para que puedas acceder cómodamente</p>
+										<center>
+										<p class="button-custom order-lg-last mb-0"><a 
+											class="btn btn-secondary py-2 px-4" href="Urgencias.html" >Entrar</a></p>
+										</center>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer class="ftco-footer ftco-bg-dark ftco-section">
+		<div class="container">
+			<div class="row mb-5">
+				<div class="col-md">
+					<div class="ftco-footer-widget mb-5">
+						<h2 class="ftco-heading-2 logo">Fidi</span></h2>
+						<p>" Bienestar en un click "</p>
+					</div>
+					<div class="ftco-footer-widget mb-5">
+						<h2 class="ftco-heading-2">Â¿Tienes alguna pregunta? Escribenos</h2>
+						<div class="block-23 mb-3">
+							<ul>
+								<li><a href="#"><span class="icon icon-envelope"></span><span
+											class="text">fidi@gmail.com</span></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-md">
+					<div class="ftco-footer-widget mb-5 ml-md-4">
+						<h2 class="ftco-heading-2">Links</h2>
+						<ul class="list-unstyled">
+							<li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Inicio</a></li>
+							<li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Nosotros</a>
+							</li>
+							<li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Noticias</a></li>
+							<li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Perfil</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md">
+					<div class="ftco-footer-widget mb-5">
+						<h2 class="ftco-heading-2">Noticias recientes</h2>
+						<div class="block-21 mb-4 d-flex">
+							<a class="blog-img mr-4" style="background-image: url(images/image_1.jpg);"></a>
+							<div class="text">
+								<h3 class="heading"><a href="#">Primera</a>
+								</h3>
+								<div class="meta">
+									<div><a href="#"><span class="icon-calendar"></span> Dec 25, 2018</a></div>
+									<div><a href="#"><span class="icon-person"></span> Admin</a></div>
+									<div><a href="#"><span class="icon-chat"></span> 19</a></div>
+								</div>
+							</div>
+						</div>
+						<div class="block-21 mb-5 d-flex">
+							<a class="blog-img mr-4" style="background-image: url(images/image_2.jpg);"></a>
+							<div class="text">
+								<h3 class="heading"><a href="#">Segunda</a>
+								</h3>
+								<div class="meta">
+									<div><a href="#"><span class="icon-calendar"></span> Dec 25, 2018</a></div>
+									<div><a href="#"><span class="icon-person"></span> Admin</a></div>
+									<div><a href="#"><span class="icon-chat"></span> 19</a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md">
+					<div class="ftco-footer-widget mb-5">
+						<h2 class="ftco-heading-2">Estamos siempre contigo</h2>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 text-center">
+					</p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					Copyright &copy;
+					<script>document.write(new Date().getFullYear());</script> All rights reserved | This template
+					is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com"
+						target="_blank">Colorlib</a>
+					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					</p>
+				</div>
+			</div>
+		</div>
+
+	</footer>
+
+</div>
+	<script>
+		window.watsonAssistantChatOptions = {
+			integrationID: "e9be2150-a7df-44cb-90e8-7d97fa830af6", // The ID of this integration.
+			region: "eu-gb", // The region your integration is hosted in.
+			serviceInstanceID: "53c6f723-ce18-4bde-b608-a1f7e0579e6d", // The ID of your service instance.
+			onLoad: function (instance) { instance.render(); }
+		};
+		setTimeout(function () {
+			const t = document.createElement('script');
+			t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+			document.head.appendChild(t);
+		});
+	</script>
+
+
+	<!-- loader -->
+	<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+			<circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+			<circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+				stroke="#F96D00" /></svg></div>
+
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery-migrate-3.0.1.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="js/jquery.waypoints.min.js"></script>
+	<script src="js/jquery.stellar.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/aos.js"></script>
+	<script src="js/jquery.animateNumber.min.js"></script>
+	<script src="js/bootstrap-datepicker.js"></script>
+	<script src="js/jquery.timepicker.min.js"></script>
+	<script src="js/scrollax.min.js"></script>
+	<script
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+	<script src="js/google-map.js"></script>
+	<script src="js/main.js"></script>
+</body>
+
+</html>

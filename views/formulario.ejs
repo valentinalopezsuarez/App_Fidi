@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+    <title>Registrarse</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+    <style>
+        body {
+            background-color: white;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            padding-top:10px;
+			font-family:Arial Narrow, Lucida bright, Optima;
+			padding-bottom:40px;
+        }
+		.button1 {
+			background: #C85225;
+			color: #fff;
+			display:inline-block;
+			font-size:1.25em;
+			margin-left:auto;
+			padding:10px 0px;
+			text-align:center;
+			width:200px;
+			text-decoration:none;
+			box-shadow:0px 3px 0px #057043;
+			border-radius:50px;
+		}
+        .whiteText {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <div class="col-sm-6 col-sm-offset-3">
+
+        <h1 class="whiteText"><span class="fa fa-sign-up"></span><%= signUpLink %></h1>
+
+        <form action="/formulario/submit?language=<%= language %>" data-toggle="validator" method="post">
+			<input name="Tren" type="checkbox" value="tren"/>Tren
+			<br/>
+			<input name="Avion" type="checkbox" value="avion"/>Avión
+			<br/>
+			<input name="Carro" type="checkbox" value="carro"/>Carro
+			<br/>
+			<input type="submit" value="Enviar"/>
+		</form>
+
+    </div>
+
+</div>
+</body>
+</html>
